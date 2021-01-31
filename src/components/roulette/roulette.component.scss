@@ -1,0 +1,55 @@
+svg.roulette{
+    margin: auto;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    z-index: -1;
+
+     #pull {
+        animation: rotate 1s ease infinite;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    @keyframes rotate {
+
+        from {
+            transform: translateY(0px) rotateX(0deg);
+        }
+        to {
+            transform: translateY(60px) rotateX(180deg);
+        }
+        
+    }
+
+    #number_1.box::after{
+        z-index: 2;
+        content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9";
+    }
+  
+    #number_1:after{
+        animation: round 1s steps (10) infinite;
+    }
+
+    #number_2:after{
+        animation: round 3s steps (10) infinite;
+    }
+
+    #number_3:after{
+        animation: round 9s steps (10) infinite;
+    }
+
+    @keyframes round {
+
+        from {
+            top: 0;
+        }
+        to {
+            top: -10em;
+        }
+        
+    }
+
+}
+
